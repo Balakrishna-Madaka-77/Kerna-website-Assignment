@@ -1,34 +1,279 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
 }
 
-.service-card,
-.work-card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
+/* ===============================
+   HERO GLOW EFFECT
+================================= */
 
-.dark .service-card,
-.dark .work-card {
-  background: #1f2937;
-}
-
-.service-card:hover,
-.work-card:hover {
-  transform: translateY(-5px);
+.glow-section {
+  position: relative;
+  overflow: hidden;
 }
 
 .glow-section::before {
   content: "";
   position: absolute;
-  width: 400px;
-  height: 400px;
-  background: rgba(20, 184, 166, 0.1);
-  border-radius: 50%;
-  top: -100px;
-  right: -100px;
-  filter: blur(80px);
+  width: 450px;
+  height: 450px;
+  background: rgba(20, 184, 166, 0.12);
+  filter: blur(140px);
+  top: -150px;
+  left: -150px;
+  z-index: 0;
+}
+
+.glow-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===============================
+   SECTION SPACING
+================================= */
+
+section {
+  scroll-margin-top: 90px;
+}
+
+/* ===============================
+   CARD SYSTEM (Services / Work / Careers)
+================================= */
+
+.service-card {
+  background:turquoise;
+  backdrop-filter: blur(10px);
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid #eaeaea;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: #14b8a6;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* Teal accent line animation */
+.service-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #14b8a6;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* ===============================
+   DARK MODE CARDS
+================================= */
+
+.dark .service-card {
+  background: rgba(31, 41, 55, 0.9);
+  border: 1px solid #374151;
+}
+
+.dark .service-card:hover {
+  border-color: #14b8a6;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* ===============================
+   BUTTON ENHANCEMENTS
+================================= */
+
+button,
+a {
+  transition: all 0.25s ease;
+}
+
+/* Primary Teal Button */
+.bg-teal-500 {
+  box-shadow: 0 5px 15px rgba(20, 184, 166, 0.3);
+}
+
+.bg-teal-500:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(20, 184, 166, 0.45);
+}
+
+/* Outline Buttons */
+.border-teal-500:hover {
+  background: #14b8a6;
+  color: #ffffff !important;
+}
+
+/* ===============================
+   FORM STYLING
+================================= */
+
+input,
+select,
+textarea {
+  border-radius: 12px;
+  border: 1px solid #d4d4d4;
+  padding: 14px;
+  width: 100%;
+  transition: all 0.25s ease;
+  font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background: #111827;
+  border: 1px solid #374151;
+  color: #e5e7eb;
+}
+
+/* ===============================
+   NAVBAR POLISH
+================================= */
+
+header {
+  transition: background-color 0.3s ease;
+}
+
+header a:hover {
+  color: #14b8a6;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+
+footer {
+  letter-spacing: 0.3px;
+}
+
+footer a {
+  color: #d1d5db;
+  transition: color 0.2s ease;
+  display: block;
+  margin-bottom: 6px;
+}
+
+footer a:hover {
+  color: #14b8a6;
+}
+
+/* ===============================
+   MAP
+================================= */
+
+iframe {
+  width: 100%;
+  border-radius: 16px;
+  border: none;
+}
+
+/* ===============================
+   TYPOGRAPHY REFINEMENT
+================================= */
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.02em;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ===============================
+   SMOOTH FADE-IN EFFECT (Optional Enhancement)
+================================= */
+
+.fade-in {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ================= HOW WE WORK + WHY CHOOSE STYLING ================= */
+
+/* Card Style for grid items */
+section .grid > div {
+  background:turquoise;
+  padding: 30px 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+/* Dark mode support */
+.dark section .grid > div {
+  background: #1f2937;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover effect */
+section .grid > div:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(20, 184, 166, 0.25);
+}
+
+/* Section Titles */
+section h3 {
+  position: relative;
+  display: inline-block;
+}
+
+section h3::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: #14b8a6;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+/* Heading inside cards */
+section h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Paragraph inside cards */
+section p {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 6px;
 }
