@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Load saved theme
   const savedTheme = localStorage.getItem("theme");
 
   if (savedTheme) {
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     applyTheme(systemDark ? "dark" : "light");
   }
 
+  // Toggle click
   if (toggleBtn) {
     toggleBtn.addEventListener("click", function () {
       const isDark = document.documentElement.classList.contains("dark");
@@ -27,4 +29,5 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("theme", newTheme);
     });
   }
+
 });
