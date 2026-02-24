@@ -53,7 +53,7 @@ kerna-website/
 5. Save changes
 
 ### Live URL Format:
-https://YOUR-GITHUB-USERNAME.github.io/kerna-website/Assign.html
+[https://YOUR-GITHUB-USERNAME.github.io/kerna-website/Assign.html](https://github.com/Balakrishna-Madaka-77/Kerna-website-Assignment/blob/main/Assign.html)
 
 ---
 
