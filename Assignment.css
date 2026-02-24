@@ -1,0 +1,34 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.service-card,
+.work-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.dark .service-card,
+.dark .work-card {
+  background: #1f2937;
+}
+
+.service-card:hover,
+.work-card:hover {
+  transform: translateY(-5px);
+}
+
+.glow-section::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(20, 184, 166, 0.1);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  filter: blur(80px);
+}
