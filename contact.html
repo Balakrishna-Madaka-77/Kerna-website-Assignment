@@ -1,28 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Kerna</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="Assignment.css">
+  <link rel="stylesheet" href="Assignment.css" />
 </head>
 
-<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200">
+<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 transition-colors duration-300">
 
-<section class="max-w-3xl mx-auto py-20 px-6">
-  <h1 class="text-3xl font-bold mb-6">Contact Us</h1>
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-neutral-900/80 backdrop-blur border-b border-neutral-200 dark:border-neutral-700">
+  <nav class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <h1 class="text-xl font-semibold">KERNA</h1>
+    <div class="space-x-6 hidden md:block">
+      <a href="Assign.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html" class="text-teal-500">Contact</a>
+      <button id="themeToggle" class="ml-4 px-3 py-1 border rounded text-sm">
+        Toggle Theme
+      </button>
+    </div>
+  </nav>
+</header>
 
-  <form class="space-y-6">
-    <input type="text" placeholder="Your Name" class="w-full p-3 border rounded">
-    <input type="email" placeholder="Your Email" class="w-full p-3 border rounded">
-    <textarea placeholder="Your Message" class="w-full p-3 border rounded"></textarea>
-    <button class="bg-teal-500 text-white px-6 py-3 rounded">
-      Send Message
+<section class="max-w-4xl mx-auto py-20 px-6">
+  <h2 class="text-4xl font-bold mb-8">Apply / Contact</h2>
+
+  <form id="applicationForm" class="space-y-6">
+
+    <input type="text" placeholder="Full Name" required class="w-full p-3 border rounded dark:bg-neutral-800">
+
+    <input type="email" placeholder="Email" required class="w-full p-3 border rounded dark:bg-neutral-800">
+
+    <select required class="w-full p-3 border rounded dark:bg-neutral-800">
+      <option value="">Role Applying For</option>
+      <option>Web Development Intern</option>
+      <option>Marketing / Sales Intern</option>
+      <option>Branding & Research Intern</option>
+    </select>
+
+    <input type="url" placeholder="Portfolio / GitHub / LinkedIn" class="w-full p-3 border rounded dark:bg-neutral-800">
+
+    <textarea placeholder="Short Message" required class="w-full p-3 border rounded dark:bg-neutral-800"></textarea>
+
+    <button type="submit" class="bg-teal-500 text-white px-6 py-3 rounded">
+      Submit Application
     </button>
+
+    <p id="successMessage" class="text-green-500 hidden">
+      Application submitted successfully!
+    </p>
+
   </form>
+
+  <div class="mt-10">
+    <p>+91 75696 12318</p>
+    <p>+91 99496 86160</p>
+    <p>Marripalem, Visakhapatnam, Andhra Pradesh</p>
+  </div>
 
 </section>
 
 <script src="theme.js"></script>
+
+<script>
+  const form = document.getElementById("applicationForm");
+  const success = document.getElementById("successMessage");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    success.classList.remove("hidden");
+    form.reset();
+  });
+</script>
+
 </body>
+</html>
 </html>
