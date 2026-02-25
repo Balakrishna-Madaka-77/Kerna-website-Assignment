@@ -17,7 +17,7 @@
     <h1 class="text-xl font-semibold tracking-wide">KERNA</h1>
 
     <div class="space-x-6 hidden md:block">
-      <a href="Assign.html" class="text-teal-500 font-medium">Home</a>
+      <a href="index.html" class="text-teal-500 font-medium">Home</a>
       <a href="work.html" class="hover:text-teal-500">Work</a>
       <a href="careers.html" class="hover:text-teal-500">Careers</a>
       <a href="contact.html" class="hover:text-teal-500">Contact</a>
@@ -213,7 +213,7 @@
 
     <div>
       <h4 class="font-semibold text-white mb-2">Navigation</h4>
-      <p><a href="Ass.html">Home</a></p>
+      <p><a href="index.html">Home</a></p>
       <p><a href="work.html">Work</a></p>
       <p><a href="careers.html">Careers</a></p>
       <p><a href="contact.html">Contact</a></p>
